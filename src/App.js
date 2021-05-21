@@ -5,7 +5,7 @@ import Matches from './components/Matches';
 import axios from 'axios';
 
 const App = () => {
-  const [predictions, setPredictions] = useState({});
+  const [predictions, setPredictions] = useState([]);
   const [isLoading, setisLoading] = useState(true);
 
   useEffect(() => {
@@ -20,15 +20,15 @@ const App = () => {
         params: { market: 'classic', iso_date: '2018-12-01', federation: 'UEFA' },
       });
       setPredictions(res.data);
-      console.log(predictions);
       setisLoading(false);
     };
     fetchPredictions();
   }, []);
+  console.log(predictions);
   return (
     <div className="container">
       <Header />
-      <Matches isLoading={isLoading} predictions={predictions} />
+      <Matches predictions={predictions} isLoading={isLoading} />
     </div>
   );
 };

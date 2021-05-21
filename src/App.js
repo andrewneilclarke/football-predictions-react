@@ -19,12 +19,13 @@ const App = () => {
         },
         params: { market: 'classic', iso_date: '2018-12-01', federation: 'UEFA' },
       });
-      setPredictions(res.data);
+      setPredictions(res.data.data);
       setisLoading(false);
     };
     fetchPredictions();
   }, []);
   console.log(predictions);
+  window.localStorage.setItem('data', JSON.stringify(predictions));
   return (
     <div className="container">
       <Header />

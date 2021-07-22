@@ -1,7 +1,10 @@
-const Header = () => {
+import Totals from './Totals';
+
+const Header = ({ today, predictions }) => {
   return (
     <div>
-      <header>Football Predictions</header>
+      <h1 className="title">Football Predictions - {today}</h1>
+      <Totals predictions={predictions} />
     </div>
   );
 };

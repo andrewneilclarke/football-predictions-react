@@ -8,7 +8,7 @@
 
 html,
 body {
-  background: #000 url("img/pitch.jpg") no-repeat center center/cover;
+  background: url("img/pitch.jpg") no-repeat center center/cover;
   min-height: 100vh;
   color: white;
   font-family: "Nunito", sans-serif, Arial, Helvetica;
@@ -16,7 +16,7 @@ body {
 }
 
 .nav-bar {
-  background-color: #282c3467;
+  background-color: #283428c2;
   min-height: 10vh;
   display: flex;
   flex-direction: row;
@@ -38,14 +38,15 @@ body {
 .homepage p {
   text-align: center;
   margin: 50px;
-  background-color: #3a3c422d;
+  background-color: #282c3467;
 }
 
 .matches,
 .stats {
   height: 90vh;
   text-align: center;
-  margin-top: 10px;
+  padding-top: 10px;
+  background-color: #282c3467;
 }
 .matches h1 {
   margin-left: 20px;
@@ -55,4 +56,12 @@ body {
 }
 .predictions ul li {
   margin: 10px 20px;
+}
+
+#prediction {
+  margin-left: .5em;
+}
+
+.nav-bar span a {
+  color: rgb(76, 209, 87);
 }

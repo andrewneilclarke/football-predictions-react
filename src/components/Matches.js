@@ -6,7 +6,7 @@ const matches = ({ predictions, isLoading, error }) => {
             {isLoading && <div>Loading...</div>}
             <h1>Matches</h1>
             <div className="predictions">
-                {predictions && predictions.map((prediction) => (
+                {predictions && [...Object.values(predictions)].map(prediction => (
                     <ul key={prediction.id}>
                         <li className="match" key={prediction.id}><span id="home">{prediction.home_team}</span><span> V </span> <span id="away">{prediction.away_team}</span><span id="prediction">{prediction.prediction} </span><span id="odds">{prediction.odds[prediction.prediction]}</span> <span id="status">{prediction.status}</span></li>
                     </ul>

@@ -1,14 +1,19 @@
-const Home = ({ predictions }) => {
+
+const Home = ({ predictions, fbpredictions }) => {
     return (
         <div className="homepage">
-            {/* {predictions && [...predictions].map(pred => (
+            {predictions && [...Object.values(predictions)].map(pred => (
                 <div key={pred.id}>
                     <p>{pred.id}</p>
                     <p>{pred.first_name}</p>
-                    <p>{pred.ip_address}</p>
                     <p>{pred.gender}</p>
+                    <p>{pred.ip_address}</p>
+                    {/* <p>{pred.home_team}</p>
+                    <p>{pred.away_team}</p>
+                    <p>{pred.prediction}</p> */}
                 </div>
-            ))} */}
+            ))}
+            {fbpredictions && <p>{JSON.stringify(fbpredictions)}</p>}
 
         </div>
         // <div className="homepage">

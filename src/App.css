@@ -43,7 +43,7 @@ body {
 
 .matches,
 .stats {
-  height: 90vh;
+  /* height: 90vh; */
   text-align: center;
   padding-top: 10px;
   background-color: #282c3467;

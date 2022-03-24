@@ -1,4 +1,5 @@
 const Totals = ({ predictions }) => {
+    const formattedPredictions = [...Object.values(predictions)]
     // const calculateTotals = () => {
     //     const numberofPredictions = predictions.length
     //     console.log(predictions)
@@ -20,7 +21,7 @@ const Totals = ({ predictions }) => {
     // averageOdds();
     return (
         <>
-            {predictions.length > 0 && <div>
+            {formattedPredictions.length > 0 && <div>
                 {/* <p>Number of Predictions {numberofPredictions}</p> */}
                 {/* <p>Average Odds (today) {averageOdds}</p>  */}
             </div>}

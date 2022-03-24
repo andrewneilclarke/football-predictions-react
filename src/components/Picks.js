@@ -1,6 +1,6 @@
 const Picks = ({ predictions, isLoading, error }) => {
-    console.log(predictions)
-    const picks = predictions.filter(prediction => prediction.odds[prediction.prediction] > 1.45)
+    const formattedPredictions = [...Object.values(predictions)]
+    const picks = formattedPredictions.filter(prediction => prediction.odds[prediction.prediction] > 1.45)
     console.log(picks)
 
     return (

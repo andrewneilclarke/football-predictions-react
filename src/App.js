@@ -11,6 +11,7 @@ import useFetch from './components/useFetch';
 import { projectFirestore } from './firebase/config';
 import useLocalStorage from './components/useLocalStorage';
 import MyPicks from './components/MyPicks';
+import Totals from './components/Totals';
 
 const App = () => {
   const [fbpredictions, setFbPredictions] = useState([{}])
@@ -59,28 +60,30 @@ const App = () => {
   // await projectFirestore.collection('messages').add(newMsg);
   // }
 
-  const getLastApiCall = async () => {
-    let date;
-    const lastApiCalls = await projectFirestore.collection('predictions').get({ today })
-    lastApiCalls.forEach(doc => console.log(doc.data().today))
-    const lastApiServerCall = lastApiCalls.forEach(doc => {
-      date = doc.data().today
-    }
+  // const getLastApiCall = async () => {
+  //   let date;
+  //   const lastApiCalls = await projectFirestore.collection('predictions').get({ today })
+  //   lastApiCalls.forEach(doc => console.log(doc.data().today))
+  //   const lastApiServerCall = lastApiCalls.forEach(doc => {
+  //     date = doc.data().today
+  //   }
 
-    )
-    return date
+  //   )
+  //   return date
 
-    // console.log(lastApiServerCall)
+  //   console.log(lastApiServerCall)
 
-    // lastApiCall.forEach(doc => {
-    //   const lastApiServerCall = doc.data().today
-    //   console.log(today === lastApiServerCall)
-    //   if (today === lastApiServerCall) {
-    //     return true
-    //   }
-    // })
-    // return false
-  }
+  //   lastApiCall.forEach(doc => {
+  //     const lastApiServerCall = doc.data().today
+  //     console.log(today === lastApiServerCall)
+  //     if (today === lastApiServerCall) {
+  //       return true
+  //     }
+  //   })
+  //   return false
+  // }
+
+
   // console.log('local state: ', predictions)
   // console.log('fb data', fbpredictions)
 
@@ -144,6 +147,7 @@ const App = () => {
     return total += parseFloat(current.odd_value) / arr.length
   }, 0)
 
+  const winLoss = addedHighBets.toFixed(2) * highbetsthatwon.length - highbets.length
   console.log(`up/down (high bets ${highbets.length})`, addedHighBets.toFixed(2) * highbetsthatwon.length - highbets.length)
   // console.log(highbets)
 
@@ -194,6 +198,7 @@ const App = () => {
       {/* <Allmatches allBets={allBets.data} /> */}
       {/* <Highodds highbets={highbets} /> */}
       <MyPicks highbets={highbets} />
+      <Totals highbets={highbets} totalBets={highbets.length} winLoss={winLoss} />
     </>
 
   )

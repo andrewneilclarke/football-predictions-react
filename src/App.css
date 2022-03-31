@@ -35,10 +35,14 @@ body {
   font-size: x-large;
 }
 .homepage h1,
-.homepage p {
-  text-align: center;
+.homepage p,
+.title {
   margin: 50px;
-  background-color: #282c3467;
+  background-color: #565c6967;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .matches,
@@ -64,4 +68,11 @@ body {
 
 .nav-bar span a {
   color: rgb(76, 209, 87);
+}
+
+.totals {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 3em;
+  background-color: #565c6967;
 }

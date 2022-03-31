@@ -1,31 +1,17 @@
-const Totals = ({ predictions }) => {
-    const formattedPredictions = [...Object.values(predictions)]
-    // const calculateTotals = () => {
-    //     const numberofPredictions = predictions.length
-    //     console.log(predictions)
-    //     const totalOdds = predictions.reduce((total, match) => {
-    //         console.log(`Total: ${total}`)
-    //         console.log(`Match: ${match}`)
-    //         return total + match.odds[match.prediction]
-    //     }, 0)
-    // }
+const Totals = ({ highbets, totalBets, winLoss }) => {
 
-    // const averageOdds = totalOdds / numberofPredictions;
-
-    // const numberofPredictions = predictions.length;
-    //     const totalOdds = predictions.reduce((total, odds) => {
-    //         return total + odds.odds
-    //     })
-    //     return numberofPredictions, totalOdds, totalOdds / numberofPredictions
-
-    // averageOdds();
     return (
-        <>
-            {formattedPredictions.length > 0 && <div>
-                {/* <p>Number of Predictions {numberofPredictions}</p> */}
-                {/* <p>Average Odds (today) {averageOdds}</p>  */}
-            </div>}
-        </>
+        <div className="totals">
+            <div>
+                <h1>Bets</h1>
+                <h2>{totalBets.toFixed()}</h2>
+            </div>
+            <div>
+                <h1>Win / Loss (€1 stake)</h1>
+                <h2>{winLoss.toFixed(2)}</h2>
+            </div>
+
+        </div>
     )
 }
 
